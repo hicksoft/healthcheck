@@ -29,5 +29,8 @@ jobs:
       run: go build -o ../healthcheck
       working-directory: src
 
-    - name: Build Dockerfile
-      run: docker build .
+    - name: Build and push Docker image
+      uses: docker/build-push-action
+      with:
+        context: .
+        push: true
