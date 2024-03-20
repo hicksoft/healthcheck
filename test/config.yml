@@ -1,0 +1,10 @@
+Monitor1:
+  target: google.com/1
+  ping: test.com/1
+  period: 30s
+  status: 200
+Monitor2:
+  target: google.com/2
+  ping: test.com/2
+  period: 5m
+  status: 204
