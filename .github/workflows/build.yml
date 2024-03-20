@@ -25,6 +25,6 @@ jobs:
       run: go test -cover
       working-directory: src
 
-    - name: Test
-      run: go build -o ../
+    - name: Build
+      run: go build -o /app/healthcheck
       working-directory: src
