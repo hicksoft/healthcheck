@@ -36,9 +36,9 @@ jobs:
       run: go test -cover
       working-directory: src
 
-    - name: Build Go
-      run: go build -o ../healthcheck
-      working-directory: src
+    # - name: Build Go
+    #   run: go build -o ../healthcheck
+    #   working-directory: src
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v5

@@ -1,6 +1,11 @@
 FROM golang:1.22.1-alpine3.19
 
-WORKDIR /app
-COPY ./healthcheck ./healthcheck
+WORKDIR /usr/src/app
 
-CMD [ "./healthcheck" ]
+COPY src/go.mod src/go.sum ./
+RUN go mod download && go mod verify
+
+COPY . .
+RUN go build -v -o /usr/local/bin/app ./src
+
+CMD ["app"]
