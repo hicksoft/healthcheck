@@ -24,3 +24,7 @@ jobs:
     - name: Test
       run: go test -cover
       working-directory: src
+
+    - name: Test
+      run: go build -o ../
+      working-directory: src
