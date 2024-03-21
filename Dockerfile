@@ -10,8 +10,9 @@ RUN go build -v -o /build/healthcheck
 FROM alpine:3.19
 
 COPY --from=builder /build/healthcheck /usr/local/bin/healthcheck
+
+ENV CONFIG_FILE=/config/config.yml
+VOLUME /config
 COPY config.yml /config/config.yml
 
-VOLUME /config
-ENV CONFIG_FILE=/config/config.yml
 CMD ["healthcheck"]

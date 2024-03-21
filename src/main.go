@@ -32,7 +32,9 @@ func main() {
 		}
 	}
 
-	scheduler.StartBlocking()
+	if scheduler.Len() > 0 {
+		scheduler.StartBlocking()
+	}
 }
 
 func readConfig() map[string]Monitor {
