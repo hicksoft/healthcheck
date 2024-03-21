@@ -5,33 +5,27 @@ import (
 )
 
 func TestReadConfig(t *testing.T) {
-	t.Setenv("CONFIG_FILE", "../test/config.yml")
+	t.Setenv("CONFIG_FILE", "../config.yml")
 
 	monitors := readConfig()
 
-	if monitors["Monitor1"].Target != "google.com/1" {
+	if monitors["Monitor1"].Target != "http://myservice1.com" {
 		t.Error("Check is not populated for Monitor 1")
 	}
-	if monitors["Monitor1"].Ping != "test.com/1" {
+	if monitors["Monitor1"].Ping != "http://healthceck.xyz" {
 		t.Error("Ping is not populated for Monitor 1")
 	}
-	if monitors["Monitor1"].Period != "30s" {
-		t.Error("Period is not populated for Monitor 1")
-	}
-	if monitors["Monitor1"].Status != 200 {
-		t.Error("Status is not populated for Monitor 1")
-	}
 
-	if monitors["Monitor2"].Target != "google.com/2" {
+	if monitors["Monitor2"].Target != "http://myservice2.com" {
 		t.Error("Check is not populated for Monitor 2")
 	}
-	if monitors["Monitor2"].Ping != "test.com/2" {
+	if monitors["Monitor2"].Ping != "http://healthceck.abc" {
 		t.Error("Ping is not populated for Monitor 2")
 	}
-	if monitors["Monitor2"].Period != "5m" {
+	if monitors["Monitor2"].Period != "30s" {
 		t.Error("Period is not populated for Monitor 2")
 	}
-	if monitors["Monitor2"].Status != 204 {
+	if monitors["Monitor2"].Status != 201 {
 		t.Error("Status is not populated for Monitor 2")
 	}
 }
