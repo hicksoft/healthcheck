@@ -12,5 +12,6 @@ FROM alpine:3.19
 COPY --from=builder /build/healthcheck /usr/local/bin/healthcheck
 COPY config.yml /config/config.yml
 
+VOLUME /config
 ENV CONFIG_FILE=/config/config.yml
 CMD ["healthcheck"]
