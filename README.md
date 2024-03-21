@@ -34,12 +34,14 @@ Monitor conigruations are defined in **/config/config.yml**
 
 ## Config
 ```
+# All options
 Monitor1:                           # Name of the monitor
   target: http://myservice2.com     # Required
   ping: http://healthceck.abc       # Required
   period: 30s                       # Optional. Default: 10m. Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h"
   status: 201                       # Optional. Default: 200
-  
+
+# Minimum options
 Monitor2:
   target: http://myservice1.com
   ping: http://healthceck.xyz
