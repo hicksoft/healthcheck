@@ -3,7 +3,7 @@ Monitor1:
   ping: http://healthceck.xyz       # Required: url to ping if target is up
 
 Monitor2:
-  target: http://myservice1.com
+  target: http://myservice2.com
   ping: http://healthceck.abc
-  period: 5m                       # Optional: Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h"
+  period: 30s                       # Optional: Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h"
   status: 201                       # Optional: https status code from target that signals a healthy response
