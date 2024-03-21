@@ -34,7 +34,7 @@ func main() {
 }
 
 func readConfig() map[string]Monitor {
-	file, err := os.ReadFile(os.Getenv("configFile"))
+	file, err := os.ReadFile(os.Getenv("CONFIG_FILE"))
 	if err != nil {
 		fmt.Printf("yamlFile.Get err #%v ", err)
 	}

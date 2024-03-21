@@ -5,7 +5,7 @@ import (
 )
 
 func TestReadConfig(t *testing.T) {
-	t.Setenv("configFile", "../test/config.yml")
+	t.Setenv("CONFIG_FILE", "../test/config.yml")
 
 	monitors := readConfig()
 

@@ -7,5 +7,8 @@ RUN go mod download && go mod verify
 
 COPY src/* .
 RUN go build -v -o /usr/local/bin/app
+RUN rm /usr/src/app
 
+COPY config.yml /config/config.yml
+ENV CONFIG_FILE=/config/config.yml
 CMD ["app"]
