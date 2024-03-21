@@ -9,6 +9,8 @@ RUN go build -v -o /build/healthcheck
 
 FROM alpine:3.19
 
+RUN apk add --no-cache tzdata
+
 COPY --from=builder /build/healthcheck /usr/local/bin/healthcheck
 
 VOLUME /config

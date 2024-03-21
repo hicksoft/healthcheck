@@ -5,5 +5,5 @@ Monitor1:
 Monitor2:
   target: http://myservice2.com
   ping: http://healthceck.abc
-  period: 30s                       # Optional: Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h"
-  status: 201                       # Optional: https status code from target that signals a healthy response
+  period: 30s                       # Optional: Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h". Default: 10m
+  status: 201                       # Optional: https status code from target that signals a healthy response. Default: 200
