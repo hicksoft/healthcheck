@@ -25,12 +25,14 @@ func main() {
 	for name, monitor := range monitors {
 		job, err := createJob(name, &monitor)
 		if err == nil {
-			fmt.Println("Schedule created for ", name, " every ", monitor.Period)
+			fmt.Println("Schedule created for", name, "every", monitor.Period)
 			scheduler.Every(monitor.Period).Do(job)
 		} else {
 			fmt.Println(err.Error())
 		}
 	}
+
+	scheduler.StartBlocking()
 }
 
 func readConfig() map[string]Monitor {
