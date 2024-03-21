@@ -13,4 +13,4 @@ COPY --from=builder /build/healthcheck /usr/local/bin/healthcheck
 COPY config.yml /config/config.yml
 
 ENV CONFIG_FILE=/config/config.yml
-CMD ["app"]
+CMD ["healthcheck"]
