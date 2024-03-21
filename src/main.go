@@ -40,13 +40,13 @@ func main() {
 func readConfig() map[string]Monitor {
 	file, err := os.ReadFile(os.Getenv("CONFIG_FILE"))
 	if err != nil {
-		fmt.Printf("yamlFile.Get err #%v ", err)
+		fmt.Printf("yamlFile.Get err #%v\n", err)
 	}
 
 	obj := make(map[string]Monitor)
 	err = yaml.Unmarshal(file, obj)
 	if err != nil {
-		fmt.Printf("Unmarshal: %v", err)
+		fmt.Printf("Unmarshal: %v\n", err)
 	}
 
 	return obj
