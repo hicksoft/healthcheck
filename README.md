@@ -15,7 +15,6 @@ A simple, lightweight container that will ping a healthcheck endpoint while a ta
 
 Every **Period**, healthcheck will send a GET request to **Target**. If a HTTP status code equal to **Status** is returned, a GET request will be sent to **Ping**, an uptime monitor such as healthcheck.io (no affiliation). If **Status** is not returned, no request will be sent to **Ping**.
 
-
 ## Docker Compose
 
 ```
